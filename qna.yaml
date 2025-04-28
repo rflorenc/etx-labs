@@ -69,4 +69,25 @@ seed_examples:
           What feature supports the use of bonds for HA with the LACP?
         answer: |
           SR-IOV with a single high-speed dual port NIC into multiple virtual functions.
-  - context:
+  - context: |
+      You can install a cluster on bare metal infrastructure that is provisioned by the OpenShift Container Platform installation program, by using the following method:
+        - Installing an installer-provisioned cluster on bare metal : You can install OpenShift Container Platform on bare metal by using installer provisioning.
+      You can install a cluster on bare metal infrastructure that you provision, by using one of the following methods:
+
+        - Installing a user-provisioned cluster on bare metal : You can install OpenShift Container Platform on bare metal infrastructure that you provision. For a cluster that contains userprovisioned infrastructure, you must deploy all of the required machines.
+        - Installing a user-provisioned bare metal cluster with network customizations : You can install a bare metal cluster on user-provisioned infrastructure with network-customizations. By customizing your network configuration, your cluster can coexist with existing IP address allocations in your environment and integrate with existing MTU and VXLAN configurations. Most of the network customizations must be applied at the installation stage.
+        - Installing a user-provisioned bare metal cluster on a restricted network : You can install a user-provisioned bare metal cluster on a restricted or disconnected network by using a mirror registry. You can also use this installation method to ensure that your clusters only use container images that satisfy your organizational controls on external content.
+
+    questions_and_answers:
+      - question: |
+          What distinguishes installer-provisioned from user-provisioned OpenShift installations on bare metal?
+        answer: |
+          Installer-provisioned installations let OpenShift handle the infrastructure setup, while user-provisioned installations require the user to manually deploy all machines. The former is more automated; the latter offers more control and flexibility.
+      - question: |
+          When would you use a user-provisioned bare metal cluster with network customizations?
+        answer: |
+          This method is used when the cluster must align with existing IP allocations, MTU, or VXLAN settings. Customizing the network during installation ensures compatibility with the organization's current infrastructure.
+      - question: |
+          How does installing on a restricted network support compliance?
+        answer: |
+          It enhances compliance by using a local mirror registry, ensuring the cluster only accesses vetted container images, which helps meet organizational or regulatory security requirements.

@@ -1,0 +1,5 @@
+version: 3
+domain: Openshift Baremetal
+created_by: will
+document_outline: |
+  Red Hat OpenShift Container Platform v4.18 Bare Metal Cluster Installation Preparation.

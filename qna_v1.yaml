@@ -139,3 +139,9 @@ seed_examples:
           Which tools can be used to add a worker node to the cluster?
         answer: |
           You can use the OpenShift CLI (oc) or the OpenShift web console to add and manage new worker nodes.
+document:
+  repo: 'https://github.com/rflorenc/etx-labs.git'
+  commit: 'fd2ae486ba3e72294987b10fd4d8c820c654a6e5'
+  patterns:
+    - './OCP_docs.md'
+    - './knowledge.md'

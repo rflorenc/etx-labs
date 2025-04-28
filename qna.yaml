@@ -1,5 +1,35 @@
 version: 3
 domain: Openshift Baremetal
-created_by: will
+created_by: willsparker
 document_outline: |
   Red Hat OpenShift Container Platform v4.18 Bare Metal Cluster Installation Preparation.
+seed_examples:
+  - context: |
+      ## CHAPTER 1. PREPARING FOR BARE METAL CLUSTER INSTALLATION
+      ## 1.1. PREREQUISITES
+      - You reviewed details about the OpenShift Container Platform installation and update processes.
+      - You have read the documentation on selecting a cluster installation method and preparing it for users.
+      ## 1.2. PLANNING A BARE METAL CLUSTER FOR OPENSHIFT VIRTUALIZATION
+      If you will use OpenShift Virtualization, it is important to be aware of several requirements before you install your bare metal cluster.
+      - If you want to use live migration features, you must have multiple worker nodes at the time of cluster installation . This is because live migration requires the cluster-level high availability (HA) flag to be set to true. The HA flag is set when a cluster is installed and cannot be changed afterwards. If there are fewer than two worker nodes defined when you install your cluster, the HA flag is set to false for the life of the cluster.
+      You can install OpenShift Virtualization on a single-node cluster, but single-node OpenShift does not support high availability.
+      - Live migration requires shared storage. Storage for OpenShift Virtualization must support and use the ReadWriteMany (RWX) access mode.
+      - If you plan to use Single Root I/O Virtualization (SR-IOV), ensure that your network interface controllers (NICs) are supported by OpenShift Container Platform.
+      ## Additional resources
+      - Getting started with OpenShift Virtualization
+      - Preparing your cluster for OpenShift Virtualization
+      - About Single Root I/O Virtualization (SR-IOV) hardware networks
+      - Connecting a virtual machine to an SR-IOV networkx
+    questions_and_answers:
+      - question: |
+          Can Openshift Virtualization be installed on a single-node cluster?
+        answer: |
+          Yes, but it does not support high availability.
+      - question: |
+          What kind of storage does live migration require?
+        answer: |
+          Live migration requires shared storage. It must also support the ReadWriteMany (RWX) access mode.
+      - question: |
+          What do I need to be aware of when installing Openshift Virtualization on a bare metal cluster?
+        answer: |
+          You will have to have multiple worker nodes at the cluster installation time. This is because the cluster-level high availability flag (HA) flag must be set to true, to use live migration. 

@@ -33,3 +33,40 @@ seed_examples:
           What do I need to be aware of when installing Openshift Virtualization on a bare metal cluster?
         answer: |
           You will have to have multiple worker nodes at the cluster installation time. This is because the cluster-level high availability flag (HA) flag must be set to true, to use live migration. 
+  - context: |
+      ## 1.3. NIC PARTITIONING FOR SR-IOV DEVICES
+
+      OpenShift Container Platform can be deployed on a server with a dual port network interface card (NIC). You can partition a single, high-speed dual port NIC into multiple virtual functions (VFs) and enable SR-IOV.
+
+      This feature supports the use of bonds for high availability with the Link Aggregation Control Protocol (LACP).
+
+      Only one LACP can be declared by physical NIC.
+
+      An OpenShift Container Platform cluster can be deployed on a bond interface with 2 VFs on 2 physical functions (PFs) using the following methods:
+
+      - Agent-based installer
+
+      The minimum required version of nmstate is:
+        - 1.4.2-4 for RHEL 8 versions
+        - 2.2.7 for RHEL 9 versions
+        - Installer-provisioned infrastructure installation
+        - User-provisioned infrastructure installation
+
+      - Example: Bonds and SR-IOV dual-nic node network configuration
+      - Optional: Configuring host network interfaces for dual port NIC
+      - Bonding multiple SR-IOV network interfaces to a dual port NIC interface
+
+    questions_and_answers:
+      - question: |
+          What is the minimum required version of nmstate, for RHEL9?
+        answer: |
+          nmstate v2.2.7
+      - question: |
+          How many LACP can be declared by physical NIC?
+        answer: |
+          Just one.
+      - question: |
+          What feature supports the use of bonds for HA with the LACP?
+        answer: |
+          SR-IOV with a single high-speed dual port NIC into multiple virtual functions.
+  - context:

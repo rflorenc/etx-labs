@@ -143,5 +143,4 @@ document:
   repo: 'https://github.com/rflorenc/etx-labs.git'
   commit: 'fd2ae486ba3e72294987b10fd4d8c820c654a6e5'
   patterns:
-    - './OCP_docs.md'
     - './knowledge.md'
